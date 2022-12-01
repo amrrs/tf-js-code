@@ -1,64 +1,17 @@
 <html>
   <head>
-    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.0.0/dist/tf.min.js"></script>
-    <style>
-      /* Add some basic styling */
-      body {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-      button {
-        padding: 10px;
-        font-size: 16px;
-        margin: 5px;
-      }
-      p {
-        font-size: 18px;
-        margin: 5px;
-      }
-    </style>
+    <title>My YouTube Channel</title>
   </head>
   <body>
-    <h1>Rock-Paper-Scissors</h1>
-    <p>Make your move:</p>
-    <div id="buttons">
-      <button id="rock">Rock</button>
-      <button id="paper">Paper</button>
-      <button id="scissors">Scissors</button>
+    <header style="font-size: 24px; color: #333;">
+      Welcome to My YouTube Channel
+    </header>
+    <p>
+      Thanks for visiting my YouTube channel! Here you will find a variety of interesting and informative videos on a wide range of topics.
+    </p>
+    <div>
+      <h2>Latest Video:</h2>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/GqfRKc3YTOY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
-    <p id="result"></p>
-    <script>
-      // TensorFlow.js code goes here
-      const moves = tf.tensor(['rock', 'paper', 'scissors']);
-function getRandomMove() {
-  // Generate a random index between 0 and 2
-  const index = tf.randomNormal([1], 0, 2).dataSync()[0];
-
-  // Return the move at the selected index
-  return moves.gather(index);
-}
-function getResult(move1, move2) {
-  switch (move1.dataSync()[0] + '-' + move2.dataSync()[0]) {
-    case 'rock-paper':
-      return 'Player 2 wins';
-    case 'rock-scissors':
-      return 'Player 1 wins';
-    case 'paper-rock':
-      return 'Player 1 wins';
-    case 'paper-scissors':
-      return 'Player 2 wins';
-    case 'scissors-rock':
-      return 'Player 2 wins';
-    case 'scissors-paper':
-      return 'Player 1 wins';
-    default:
-      return 'Draw';
-  }
-}
-const resultElement = document.getElementById('result');
-
-
-    </script>
   </body>
 </html>
